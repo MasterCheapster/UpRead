@@ -1,0 +1,80 @@
+$lg:#b9e7e7;
+$text:#161616;
+
+.App{
+  
+    text-align: center;
+    color:$text;
+  
+    .container{
+
+        .auth{
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+            background: $lg;
+        }
+
+        h1{
+            font-size: 20px;
+            color:teal;
+            margin-bottom: 20px;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-color: white;
+            width: 200px;
+            gap:20px
+        }
+
+        input{ 
+            transition: 0.2s;
+            color: #16161699;
+            background-color: white;
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid gray;
+        }
+
+        button{
+            transition: 0.2s;
+            background-color: teal;
+            padding: 10px;
+            border: none;
+            color: white;
+            cursor:pointer
+        }
+
+        button:hover
+        {
+           transform: scale(1.01);
+        }
+        p{
+            font-size: 12px;
+            color: red;
+        }
+        span{
+            text-align: center;
+            font-size: 12px;
+        }
+
+        // navbar
+        
+        .navbar{
+            .container{
+                padding: 10px 0px;
+                display: flex;
+                justify-content: space-between;
+                .logo{}
+                .links{}
+            }
+        }
+
+    }
+    
+}
