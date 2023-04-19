@@ -8,7 +8,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Single from './components/pages/Single';
 import Write from './components/pages/Write';
-
 import './style.scss';
 
 const Layout=()=>{
@@ -20,6 +19,7 @@ const Layout=()=>{
     </>
   )
 }
+
 
 const router=createBrowserRouter([
   {
@@ -41,7 +41,7 @@ const router=createBrowserRouter([
         element:<Single/>
       }
 
-    ]
+    ] 
   },
 
   {

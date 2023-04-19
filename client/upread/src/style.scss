@@ -1,13 +1,18 @@
 $lg:#b9e7e7;
+$lglight:#b9e7e790;
 $text:#161616;
 
-.App{
-  
-    text-align: center;
-    color:$text;
-  
-    .container{
 
+.App{
+    
+    display: flex;
+    justify-content: center;
+    color:$text;
+    text-align: center;
+
+    .container{
+        
+        width:90%;
         .auth{
             display: flex;
             height: 100vh;
@@ -67,14 +72,158 @@ $text:#161616;
         
         .navbar{
             .container{
-                padding: 10px 0px;
+                // background-color:#b9e7e750;
+                padding: 10px;
                 display: flex;
                 justify-content: space-between;
-                .logo{}
-                .links{}
+
+                .logo{
+                  width: 125px;
+                }
+
+                .links{
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+
+                h6{
+                    font-size: 15px;
+                    font-weight: 300;
+                }
+
+                .link{
+                    margin:0 20px;
+                    text-decoration: none;
+                    transition: 0.2s;
+                    &:hover{
+                    transform: scale(1.01);
+                    }
+                }
+                
+                .write{
+                    text-decoration: none;
+                    background-color:$lg;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 300;
+                    transition: 0.2s;
+                    border: 1px solid white;
+
+                    &:hover{
+                        color:teal;
+                        background-color: white;
+                        border: 1px solid teal;
+                    }
+                }
             }
         }
 
+        footer{
+            margin-top: 100px;
+            padding: 20px;
+            background: $lg;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size:12px ;
+            img{
+                height: 60px; 
+            }
+         }
+         
+         .home{
+
+            .posts{
+                margin-top:50px;
+                display: flex;
+                flex-direction: column;
+                gap:150px;
+
+        
+
+            }
+
+         }
+
+         .post{
+            display: flex;
+            flex-direction: row;
+            gap: 100px;
+            color:#161616;
+            &:nth-child(even)
+            {
+                flex-direction: row-reverse;
+            }
+
+            .img{
+
+                flex: 2;
+                position: relative;
+
+                &::after{
+                position: absolute;
+                content:"";
+                width: 80%;
+                height:100%;
+                background-color:$lg ;
+                top:10px;
+                right:10px;
+                z-index:-1;
+                filter: blur(20px);
+                
+                }
+
+                
+
+                img{
+                    width: 400px;
+                    max-height: 400px;
+                    object-fit: cover;
+                }
+            }
+            
+            .content{
+                flex: 3;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items:center ;
+                
+                h1{
+                     font-size: 48px;
+                     color: #161616;
+                     text-decoration: none!important;
+                }
+                
+                p{
+                    color: #161616;
+                    font-size: 18px;
+                }
+
+                button{
+                    width: max-content;
+                    padding: 10px 20px;
+                    border: none;
+                    cursor: pointer;
+                    color: teal;
+                    background-color:white;
+                    border: 1px solid $lg;
+                    transition: 0.2s;
+                    &:hover{
+                        border: 1px solid white;
+                        background-color: $lg;
+                        color:black;
+                    }
+                }
+
+            }
+        }
+      
     }
-    
-}
+   
+} 

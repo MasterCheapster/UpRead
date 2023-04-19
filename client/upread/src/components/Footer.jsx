@@ -1,7 +1,13 @@
 import React from 'react'
+import Logo from '../logo.png';
 
 export default function Footer() {
   return (
-    <div>Footer</div>
+    <footer>
+    <img src={Logo} alt="" />
+    <span>
+      Made WITH REACT
+    </span>
+    </footer>
   )
 }
