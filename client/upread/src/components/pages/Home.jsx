@@ -11,11 +11,10 @@ export default function Home() {
 
   useEffect(()=>{
     
-    setTimeout(()=>{
       axios.get('https://jsonplaceholder.typicode.com/photos').then((response)=>{
         setPosts(response.data);
   })
-    },2000)
+   
     
   },[])
 
@@ -33,9 +32,11 @@ export default function Home() {
     <div className='home'>
     <div className='posts'>
     {
-      posts.map((post)=>{
+      posts.map((post,index)=>{
         return (
-          <Post data={post}/>
+       
+          index<10 && <Post data={post}/>
+  
         )
       })
     }
