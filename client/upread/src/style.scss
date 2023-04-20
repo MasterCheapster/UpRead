@@ -151,10 +151,15 @@ $text:#161616;
          }
 
          .post{
+
+            &:hover{
+                transform: scale(1.01);
+            }
             display: flex;
             flex-direction: row;
             gap: 100px;
             color:#161616;
+            transition: 0.2s;
             &:nth-child(even)
             {
                 flex-direction: row-reverse;
