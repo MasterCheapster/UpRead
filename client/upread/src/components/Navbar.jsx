@@ -11,7 +11,7 @@ export default function Navbar() {
         <img className='logo' src={Logo} alt="logo" />
         </div>
           <div className="links">
-          <Link className='link' to='/?cat=art'>
+          <Link className='link' to='/'>
             <h6>ART</h6>
           </Link>
           <Link className='link' to='/?cat=science'>

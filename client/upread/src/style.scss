@@ -2,17 +2,13 @@ $lg:#b9e7e7;
 $lglight:#b9e7e790;
 $text:#161616;
 
-
 .App{
-    
     display: flex;
     justify-content: center;
     color:$text;
-    text-align: center;
 
     .container{
-        
-        width:90%;
+        width:90%;        
         .auth{
             display: flex;
             height: 100vh;
@@ -61,7 +57,6 @@ $text:#161616;
         }
         p{
             font-size: 12px;
-            color: red;
         }
         span{
             text-align: center;
@@ -124,8 +119,8 @@ $text:#161616;
         }
 
         footer{
-            margin-top: 100px;
-            padding: 20px;
+            margin-top:150px;
+            padding:20px;
             background: $lg;
             display: flex;
             justify-content: space-between;
@@ -137,15 +132,13 @@ $text:#161616;
          }
          
          .home{
-
+            
+            text-align: center;
             .posts{
                 margin-top:50px;
                 display: flex;
                 flex-direction: column;
                 gap:150px;
-
-        
-
             }
 
          }
@@ -179,12 +172,9 @@ $text:#161616;
                 top:10px;
                 right:10px;
                 z-index:-1;
-                filter: blur(20px);
-                
+                filter: blur(20px);                
                 }
-
                 
-
                 img{
                     width: 400px;
                     max-height: 400px;
@@ -228,7 +218,137 @@ $text:#161616;
 
             }
         }
+
+        .single{
+            margin-top: 40px;
+            display:flex;
+            gap:50px;
+
+            .content{
+
+                flex:5;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                img{
+                     width: 100%;
+                     height: 300px;
+                     object-fit: cover;
+                }
+
+                .user{
+                    margin-bottom: 40px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius:50%;
+                        object-fit: cover;
+                    }
+
+                    span{
+                        font-weight: bold;
+                    }
+                }
+              
+                .edit{
+                    display: flex;
+                    gap: 5px;
+                
+                img{
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+                }
+
+                h1{
+                    font-size: 42px;
+                    color:#333;
+                }
+
+                .content{
+                    text-align: justify;
+                    line-height: 30px;
+                    font-size: 18px;
+                }
+            }
+            .menu{
+                flex:2;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+                h1{
+                    font-size: 20px;
+                    color: #555;
+                }
+
+                .post{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    img{
+                        width: 100%;
+                        height: 200px;
+                        object-fit:cover;
+                    }
+
+                    button{
+                        width: max-content;
+                        border: none;
+                        cursor: pointer;
+                        color: teal;
+                        background-color:white;
+                        border: 1px solid $lg;
+                        transition: 0.2s;
+                        &:hover{
+                            border: 1px solid white;
+                            background-color: $lg;
+                            color:black;
+                        }
+                    }
+
+                }
+            }
+        }
       
+        .add{
+            margin-top:20px;
+            display: flex;
+            gap: 20px;
+
+            .content{
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            input{
+                padding: 10px;
+                border: 1px solid lightgray;
+            }
+
+            .menu{
+                flex:2;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .button{
+                background-color: white;
+            }
+
+        }
+
     }
    
 } 

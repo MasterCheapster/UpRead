@@ -6,7 +6,9 @@ export default function Footer() {
     <footer>
     <img src={Logo} alt="" />
     <span>
-      Made WITH REACT
+      Made WITH REACT 
+    </span>
+    <span>
     </span>
     </footer>
   )

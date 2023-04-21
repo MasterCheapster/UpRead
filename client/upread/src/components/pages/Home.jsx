@@ -1,5 +1,4 @@
 import React,{useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
 import Post from '../Post';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -11,17 +10,17 @@ export default function Home() {
   const [parent] = useAutoAnimate({duration:1000});
 
   useEffect(()=>{
-     
-      setTimeout(()=>{
+
+  setTimeout(()=>{
         axios.get('https://jsonplaceholder.typicode.com/photos').then((response)=>{
         setPosts(response.data);
       })
-  },1500)
+  },500)
    
     
   },[])
 
-  if(posts==null) return (
+  if(posts===null) return (
      <div className="home" ref={parent}>
       <CircularProgress color='success' style={{margin:'150px'}}/>
       </div>
