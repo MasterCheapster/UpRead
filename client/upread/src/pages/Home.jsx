@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react';
-import Post from '../Post';
+import Post from '../components/Post';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useAutoAnimate } from '@formkit/auto-animate/react'
