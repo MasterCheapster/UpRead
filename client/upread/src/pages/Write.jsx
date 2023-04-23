@@ -13,7 +13,7 @@ const Write = () => {
   const [cat, setCat] = useState(state?.cat || "");
 
   const navigate = useNavigate()
-
+  //upload image function
   const upload = async () => {
     try {
       const formData = new FormData();
@@ -30,8 +30,7 @@ const Write = () => {
     const imgUrl = await upload();
 
     try {
-      state
-        ? await axios.put(`/posts/${state.id}`, {
+      state ? await axios.put(`/posts/${state.id}`, {
             title,
             desc: value,
             cat,
