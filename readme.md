@@ -1,3 +1,3 @@
 <!-- @format -->
 
-Our Minor Project , a blogging application called Upread
+Our Minor Project, a blogging and discussion application called Upread..
