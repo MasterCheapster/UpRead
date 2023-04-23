@@ -1,4 +1,3 @@
 <!-- @format -->
 
-Minor-Project
-{ayush}
+Our Minor Project , a blogging application called Upread
