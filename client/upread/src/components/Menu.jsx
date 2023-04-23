@@ -1,57 +1,58 @@
-import React from 'react'
-import Post from './Post'
-import { useEffect,useState} from 'react';
-import axios from 'axios';
-import { useAutoAnimate } from '@formkit/auto-animate/react';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
-export default function Menu() {
+const Menu = ({cat}) => {
+  const [posts, setPosts] = useState([]);
 
-    const [parent] = useAutoAnimate({duration:1000});
-    const [posts,setPosts]=useState([
-        {
-            id: 1,
-            title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        body: "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
-            url:'https://images.pexels.com/photos/15735888/pexels-photo-15735888.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
-            },
-            {
-            id: 2,
-            title: "qui est esse",
-            body: "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla",
-            url:'https://images.pexels.com/photos/4573481/pexels-photo-4573481.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
-            },
-            {
-            id: 3,
-            title: "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-            body: "et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit aut",
-            url:'https://images.pexels.com/photos/4738517/pexels-photo-4738517.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
-            },
-            {
-            id: 4,
-            title: "eum et est occaecati",
-            body: "ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit",
-            url:'https://images.pexels.com/photos/15199055/pexels-photo-15199055.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
-            }
-    ]);
-
- 
-   if(posts===null)
-   return(null)
-   else
-   return (
-    <div className='menu' ref={parent}>
-    <h1>Other posts you may like</h1>
-    {
-      posts.map((post,index)=>{
-        return (
-        <div className='post' key={post.id}>
-        <img src={post.url} alt="" />
-        <h2>{post.title}</h2>
-        <button>Read More</button>
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`/posts/?cat=${cat}`);
+        setPosts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, [cat]);
+  // const posts = [
+  //   {
+  //     id: 1,
+  //     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+  //     desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+  //     img: "https://images.pexels.com/photos/7008010/pexels-photo-7008010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+  //     desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+  //     img: "https://images.pexels.com/photos/6489663/pexels-photo-6489663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+  //     desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+  //     img: "https://images.pexels.com/photos/4230630/pexels-photo-4230630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+  //     desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. A possimus excepturi aliquid nihil cumque ipsam facere aperiam at! Ea dolorem ratione sit debitis deserunt repellendus numquam ab vel perspiciatis corporis!",
+  //     img: "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  //   },
+  // ];
+  return (
+    <div className="menu">
+      <h1>Other posts you may like</h1>
+      {posts.map((post) => (
+        <div className="post" key={post.id}>
+          <img src={`../upload/${post?.img}`} alt="" />
+          <h2>{post.title}</h2>
+          <button>Read More</button>
         </div>
-
-        )})
-    }
+      ))}
     </div>
-  )
-}
+  );
+};
+
+export default Menu;

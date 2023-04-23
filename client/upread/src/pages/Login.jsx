@@ -1,8 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import axios from "axios";
+import React, { useState } from "react";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
 
 const Login = () => {
-   const [inputs, setInputs] = useState({
+  const [inputs, setInputs] = useState({
     username: "",
     password: "",
   });
@@ -11,6 +14,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const { login } = useContext(AuthContext);
+
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -26,16 +30,22 @@ const Login = () => {
     }
   };
   return (
-     <div className="auth">
+    <div className="auth">
       <h1>Login</h1>
       <form>
         <input
-          required type="text" placeholder="username"
-          name="username" onChange={handleChange}
+          required
+          type="text"
+          placeholder="username"
+          name="username"
+          onChange={handleChange}
         />
         <input
-          required type="password" placeholder="password"
-          name="password" onChange={handleChange}
+          required
+          type="password"
+          placeholder="password"
+          name="password"
+          onChange={handleChange}
         />
         <button onClick={handleSubmit}>Login</button>
         {err && <p>{err}</p>}
@@ -45,5 +55,6 @@ const Login = () => {
       </form>
     </div>
   );
-}
-export default Login 
+};
+
+export default Login;
