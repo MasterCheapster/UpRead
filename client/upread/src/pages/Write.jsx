@@ -29,24 +29,55 @@ const Write = () => {
     e.preventDefault();
     const imgUrl = await upload();
 
+    console.log(imgUrl);
+
+    // try {
+    //   state ? await axios.put(`/posts/${state.id}`, {
+    //         title,
+    //         desc: value,
+    //         cat,
+    //         img: file ? imgUrl : "",
+    //         withCredentials: true
+    //       })
+    //     : await axios.post(`/posts/`, {
+    //         title,
+    //         desc: value,
+    //         cat,
+    //         img: file ? imgUrl : "",
+    //         date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
+    //         withCredentials: true
+    //       });
+    //       navigate("/")
+    // } catch (err) {
+    //   console.log(err);
+    // }
+
     try {
-      state ? await axios.put(`/posts/${state.id}`, {
+        state ? await fetch(`http://localhost:8800/api/posts/${state.id}`, {
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
             title,
             desc: value,
             cat,
-            img: file ? imgUrl : "",
-          })
-        : await axios.post(`/posts/`, {
-            title,
-            desc: value,
-            cat,
-            img: file ? imgUrl : "",
-            date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
+            img: file ? imgUrl : ""
+          }), credentials:"include", method:"POST"
+        })
+          : await fetch(`http://localhost:8800/api/posts/`, {
+            headers: { "Content-Type": "application/json" },
+            body:JSON.stringify({
+              title,
+              desc: value,
+              cat,
+              img: file ? imgUrl : "",
+              date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
+            }), credentials:"include", method:"POST"
           });
-          navigate("/")
-    } catch (err) {
-      console.log(err);
-    }
+
+            navigate("/")
+      } catch (err) {
+        console.log(err);
+      }
+    
   };
 
   return (

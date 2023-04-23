@@ -5,12 +5,15 @@ import postRoutes from "./routes/posts.js";
 import cookieParser from "cookie-parser";
 import multer from "multer";
 import cors from "cors";
+import bodyParser from 'body-parser';
 
 const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cors({origin: true, credentials: true}));
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "../client/upread/public/upload");
