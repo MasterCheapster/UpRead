@@ -1,15 +1,19 @@
 $lightGreen: #b9e7e7;
 
+html{
+    background:#131313
+}
 .app {
     display: flex;
     justify-content: center;
-
+    background-image:linear-gradient(#131313,#120f0f);
+    
     .container {
-        width: 1024px;
+        width: 80vw;
 
         .link {
             text-decoration: none;
-            color: inherit;
+            color: whitesmoke;
         }
 
         //LOGIN & REGISTER
@@ -81,7 +85,8 @@ $lightGreen: #b9e7e7;
                 .links {
                     display: flex;
                     align-items: center;
-                    gap: 10px;
+                    gap: 30px;
+                    color: whitesmoke;
 
                     h6 {
                         font-size: 16px;
@@ -93,7 +98,8 @@ $lightGreen: #b9e7e7;
                     }
 
                     .write {
-                        background-color: $lightGreen;
+                        transition:0.2s;
+                        background-color: #262626;
                         width: 50px;
                         height: 50px;
                         border-radius: 50%;
@@ -102,10 +108,11 @@ $lightGreen: #b9e7e7;
                         justify-content: center;
                         font-weight: 300;
                         border: 1px solid white;
+                        padding: 0.5rem;
 
                         &:hover {
+                            transform:scale(1.02);
                             color: teal;
-                            background-color: white;
                             border: 1px solid teal;
                         }
                     }
@@ -118,7 +125,8 @@ $lightGreen: #b9e7e7;
         footer {
             margin-top: 100px;
             padding: 20px;
-            background-color: $lightGreen;
+            background-color: #262626;
+            color: ghostwhite;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -154,11 +162,13 @@ $lightGreen: #b9e7e7;
                             content: "";
                             width: 100%;
                             height: 100%;
-                            background-color: $lightGreen;
+                            background-color: darkblue;
+                            opacity: 0.1;
                             position: absolute;
                             top: 20px;
                             left: -20px;
                             z-index: -1;
+                            filter: blur(50px);
                         }
 
                         img {
@@ -173,6 +183,7 @@ $lightGreen: #b9e7e7;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
+                        color: ghostwhite;
 
                         h1 {
                             font-size: 48px;
@@ -190,6 +201,7 @@ $lightGreen: #b9e7e7;
                             background-color: white;
                             border: 1px solid teal;
                             color: teal;
+                            margin-top: 20px;
 
                             &:hover {
                                 border: 1px solid white;
@@ -275,6 +287,7 @@ $lightGreen: #b9e7e7;
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
+                    color: ghostwhite;
 
                     img {
                         width: 100%;
@@ -349,7 +362,7 @@ $lightGreen: #b9e7e7;
                     flex-direction: column;
                     justify-content: space-between;
                     font-size: 12px;
-                    color: #555;
+                    color: ghostwhite;
 
                     h1 {
                         font-size: 20px;
@@ -385,7 +398,7 @@ $lightGreen: #b9e7e7;
                         display: flex;
                         align-items: center;
                         gap: 2px;
-                        color: teal;
+                        color: ghostwhite;
                     }
                 }
             }

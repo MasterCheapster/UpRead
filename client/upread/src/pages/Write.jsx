@@ -132,7 +132,7 @@ const Write = () => {
               id="art"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="art">Art</label>
+            <label htmlFor="art">MUSIC</label>
           </div>
           <div className="cat">
             <input
@@ -143,7 +143,7 @@ const Write = () => {
               id="science"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="science">Science</label>
+            <label htmlFor="science">STARTUP</label>
           </div>
           <div className="cat">
             <input
@@ -165,7 +165,7 @@ const Write = () => {
               id="cinema"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="cinema">Cinema</label>
+            <label htmlFor="cinema">FILM</label>
           </div>
           <div className="cat">
             <input
@@ -176,7 +176,7 @@ const Write = () => {
               id="design"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="design">Design</label>
+            <label htmlFor="design">BUSINESS</label>
           </div>
           <div className="cat">
             <input
@@ -187,7 +187,7 @@ const Write = () => {
               id="food"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="food">Food</label>
+            <label htmlFor="food">TRAVEL</label>
           </div>
         </div>
       </div>

@@ -15,23 +15,26 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="links">
+          <Link className="link" to="https://joinlooks.github.io/news-app-react-01/">
+            <h6>NEWS</h6>
+          </Link>
           <Link className="link" to="/?cat=art">
-            <h6>ART</h6>
+            <h6>MUSIC</h6>
           </Link>
           <Link className="link" to="/?cat=science">
-            <h6>SCIENCE</h6>
+            <h6>STARTUP</h6>
           </Link>
           <Link className="link" to="/?cat=technology">
             <h6>TECHNOLOGY</h6>
           </Link>
           <Link className="link" to="/?cat=cinema">
-            <h6>CINEMA</h6>
+            <h6>FILM</h6>
           </Link>
           <Link className="link" to="/?cat=design">
-            <h6>DESIGN</h6>
+            <h6>BUSINESS</h6>
           </Link>
           <Link className="link" to="/?cat=food">
-            <h6>FOOD</h6>
+            <h6>TRAVEL</h6>
           </Link>
           <span>{currentUser?.username}</span>
           {currentUser ? (
@@ -43,7 +46,7 @@ const Navbar = () => {
           )}
           <span className="write">
             <Link className="link" to="/write">
-              Write
+              Publish
             </Link>
           </span>
         </div>
