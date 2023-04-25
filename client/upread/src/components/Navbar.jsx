@@ -15,7 +15,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="links">
-          <Link className="link" to="https://joinlooks.github.io/news-app-react-01/">
+          <Link className="link" to="https://viditj082.github.io/test/">
             <h6>NEWS</h6>
           </Link>
           <Link className="link" to="/?cat=art">
